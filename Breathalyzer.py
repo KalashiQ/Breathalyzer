@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-# Функции для расчета
+
 def calculate_alcohol_blood_level(volume_ml, alcohol_percentage, weight_kg, gender):
     pure_alcohol_g = volume_ml * alcohol_percentage / 100 * 0.789
 
@@ -45,17 +45,17 @@ def calculate():
     except ValueError:
         result_label.config(text="Ошибка: Проверьте введенные данные!")
 
-# Создание окна
+
 root = tk.Tk()
 root.title("Алкотестер")
 root.geometry("500x450")
 root.configure(bg="#F0F0F0")  # Легкий серый фон
 
-# Заголовок
+
 title_label = tk.Label(root, text="Виртуальный Алкотестер", font=("Helvetica", 18, "bold"), anchor="center", bg="#F0F0F0", fg="#37474F")
 title_label.pack(pady=20)
 
-# Пол выбора пола
+
 gender_label = tk.Label(root, text="Выберите ваш пол:", bg="#F0F0F0", fg="#37474F", font=("Helvetica", 12))
 gender_label.pack(anchor="w", padx=20)
 
@@ -67,7 +67,7 @@ female_button = tk.Radiobutton(gender_frame, text="Женский", variable=gen
 male_button.grid(row=0, column=0, padx=5)
 female_button.grid(row=0, column=1, padx=5)
 
-# Поля ввода
+
 weight_label = tk.Label(root, text="Ваш вес (в кг):", bg="#F0F0F0", fg="#37474F", font=("Helvetica", 12))
 weight_label.pack(anchor="w", padx=20)
 weight_entry = tk.Entry(root)
@@ -83,13 +83,13 @@ alcohol_label.pack(anchor="w", padx=20)
 alcohol_entry = tk.Entry(root)
 alcohol_entry.pack(fill="x", padx=20, pady=5)
 
-# Кнопка расчета
+
 calculate_button = tk.Button(root, text="Рассчитать", command=calculate, bg="#FF6F61", fg="black", font=("Helvetica", 12, "bold"), padx=10, pady=5)
 calculate_button.pack(pady=10)
 
-# Результат
+
 result_label = tk.Label(root, text="", font=("Helvetica", 14, "italic"), background="#F0F0F0", fg='black')
 result_label.pack(pady=20)
 
-# Запуск приложения
+
 root.mainloop()
